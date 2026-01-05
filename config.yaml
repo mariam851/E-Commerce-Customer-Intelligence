@@ -1,0 +1,64 @@
+# config.yaml
+
+# ------------------------
+# Paths & Files
+# ------------------------
+data:
+  input_file: "data/E-commerce data.csv"
+  reports_folder: "reports"
+  figures_folder: "reports/figures"
+
+# ------------------------
+# RFM & Segmentation
+# ------------------------
+rfm:
+  recency_col: "Recency"
+  frequency_col: "Frequency"
+  monetary_col: "Monetary"
+
+clustering:
+  n_clusters: 4
+  random_state: 42
+
+# ------------------------
+# Churn Prediction
+# ------------------------
+churn:
+  threshold_days: 90
+  features: ["Frequency", "Monetary"]
+  model: "LogisticRegression"
+  test_size: 0.25
+  random_state: 42
+
+# ------------------------
+# Dashboard Config
+# ------------------------
+dashboard:
+  title: "E-Commerce Customer Intelligence Dashboard"
+  kpi_cards: 
+    - "Customers"
+    - "Revenue"
+    - "Avg Customer Value"
+    - "Top Segment"
+  tabs:
+    - "Overview"
+    - "Segmentation & KPIs"
+    - "Churn Analysis"
+    - "Retention Actions"
+    - "Time-Based Insights"
+    - "Feature Importance"
+  churn_risk_slider: 
+    min: 0
+    max: 100
+    default: 50
+
+# ------------------------
+# Visualization Settings
+# ------------------------
+visualizations:
+  colors:
+    segment_revenue: "Set2"
+    churn_risk: "Reds"
+    recency_distribution: "Blues"
+  hist_bins: 30
+  line_width: 2
