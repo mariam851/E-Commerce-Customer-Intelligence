@@ -23,81 +23,84 @@ This project provides a **Profit-Driven Framework** to:
 
 ---
 
-## Project Structure
-Designed for scalability and clean code maintenance:
-```graphql
-project/
-│
-├─ app.py                    # Main Business Dashboard
-├─ requirements.txt          # Environment dependencies
-├─ src/                      # Production-grade modular logic
-│   ├─ load_and_clean_data.py
-│   ├─ compute_rfm.py
-│   ├─ scale_rfm.py
-│   ├─ apply_kmeans.py
-│   ├─ assign_segments.py
-│   └─ segment_statistics.py
-├─ data/                     # Transactional Datasets
-└─ reports/
-    └─ figures/              # Visual assets for analysis
-
 ## Core Business Intelligence & Analysis
-
-![Customer Data Overview]
 
 ### RFM Data Intelligence
 We analyze the customer base through three fundamental dimensions to understand the "Health" of our customer relationships:
+- **Recency:** Time since last purchase (Engagement indicator).
+- **Frequency:** Total transactions (Loyalty indicator).
+- **Monetary:** Total revenue (Financial value).
 
-- **Recency:** Time since last purchase (Engagement indicator)  
-- **Frequency:** Total transactions (Loyalty indicator)  
-- **Monetary:** Total revenue (Financial value)  
+![Customer Data Overview](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/customers_data.png)
 
 ### Customer Segmentation (Targeting Strategy)
-Using KMeans Clustering, we categorize customers into 4 personas to enable Precision Marketing:
+Using **KMeans Clustering**, we categorize customers into 4 personas to enable **Precision Marketing**:
+1. **Loyal Customers:** High-frequency assets; focus on cross-selling.
+2. **Big Spenders:** High monetary contribution; focus on premium upsells.
+3. **At Risk:** Declining engagement; requires immediate reactivation offers.
+4. **New / Occasional:** Recently acquired; requires onboarding nurture sequences.
 
-- **Loyal Customers:** High-frequency assets; focus on cross-selling  
-- **Big Spenders:** High monetary contribution; focus on premium upsells  
-- **At Risk:** Declining engagement; requires immediate reactivation offers  
-- **New / Occasional:** Recently acquired; requires onboarding nurture sequences  
-
-![Segment Risk Analysis]
+![Segment Risk Analysis](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/avg_chunk_risk_by_segment.png)
 
 ### Churn Prediction (Risk Mitigation)
-We implemented a Logistic Regression model to calculate a **Churn Risk Score (%)**.
+We implemented a **Logistic Regression** model to calculate a **Churn Risk Score (%)**.
+- **Key Discovery:** Our analysis shows that **Frequency (-2.62)** has a significantly higher impact on retention than **Monetary (-1.67)**. 
+- **Business Insight:** Building **shopping habits** is more valuable for long-term stability than isolated high-ticket sales.
 
-- **Key Discovery:** Frequency (-2.62) has a significantly higher impact on retention than Monetary (-1.67)  
-- **Business Insight:** Building shopping habits is more valuable for long-term stability than isolated high-ticket sales  
-
-![Churn Prediction Model Performance]
+![Churn Prediction Model Performance](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/churn_prediction_model.png)
 
 ### Time-Based Behavioral Insights
 Understanding when and how customers interact with the platform helps in timing our interventions.
+- **Recency Distribution:** Helps management define the "Defection Point" to trigger recovery campaigns.
+- **Seasonality:** Tracks monthly revenue trends to align marketing budgets with high-activity periods.
 
-- **Recency Distribution:** Helps management define the "Defection Point" to trigger recovery campaigns  
-- **Seasonality:** Tracks monthly revenue trends to align marketing budgets with high-activity periods  
+![Recency Distribution](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/recency_distribution.png)
 
 ---
-
-![Recency Distribution]
 
 ## Business Impact & Value Proposition
-- **Enhanced ROI:** By targeting only at-risk or high-value customers, we optimize marketing spend and avoid "blanket discounts."  
-- **Revenue Recovery:** The Action Engine identifies VIP customers at risk, triggering "Urgent VIP Calls" to save high-stakes accounts  
-- **Data-Driven Culture:** Shifts the organization from "guessing" to "knowing" based on statistical significance  
+- **Enhanced ROI:** By targeting only at-risk or high-value customers, we optimize marketing spend and avoid "blanket discounts."
+- **Revenue Recovery:** The **Action Engine** identifies VIP customers at risk, triggering "Urgent VIP Calls" to save high-stakes accounts.
+- **Data-Driven Culture:** Shifts the organization from "guessing" to "knowing" based on statistical significance.
 
 ---
+
+## Project Structure (Modules)
+Designed for scalability and clean code maintenance, the project follows a modular architecture:
+
+```graphql
+project/
+│
+├─ app.py                    # Main Business Dashboard (Streamlit UI)
+├─ requirements.txt          # Environment dependencies
+├─ data/                     # Transactional Datasets (CSV)
+├─ reports/
+│   └─ figures/              # Visual assets and performance charts
+└─ src/                      # Production-grade modular logic
+    ├─ load_and_clean_data.py
+    ├─ compute_rfm.py
+    ├─ scale_rfm.py
+    ├─ apply_kmeans.py
+    ├─ assign_segments.py
+    └─ segment_statistics.py
+```
 
 ## How to Deploy
 
-1. **Clone the repository**
-```bash
+Clone the repository:
+
+```graphql
 git clone <your-repo-url>
+```
 
-### Install dependencies
+Install dependencies:
 
+```graphql
 pip install -r requirements.txt
+```
 
+Launch the Dashboard:
 
-### Launch the Dashboard
-
+```graphql
 streamlit run app.py
+```
