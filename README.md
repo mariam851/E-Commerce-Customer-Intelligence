@@ -31,7 +31,7 @@ We analyze the customer base through three fundamental dimensions to understand 
 - **Frequency:** Total transactions (Loyalty indicator).
 - **Monetary:** Total revenue (Financial value).
 
-![Customer Data Overview](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/customers_data.png)
+![Customer Data Overview](reports/figures/customers_data.png)
 
 ### Customer Segmentation (Targeting Strategy)
 Using **KMeans Clustering**, we categorize customers into 4 personas to enable **Precision Marketing**:
@@ -40,21 +40,21 @@ Using **KMeans Clustering**, we categorize customers into 4 personas to enable *
 3. **At Risk:** Declining engagement; requires immediate reactivation offers.
 4. **New / Occasional:** Recently acquired; requires onboarding nurture sequences.
 
-![Segment Risk Analysis](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/avg_chunk_risk_by_segment.png)
+![Segment Risk Analysis](reports/figures/avg_chunk_risk_by_segment.png)
 
 ### Churn Prediction (Risk Mitigation)
 We implemented a **Logistic Regression** model to calculate a **Churn Risk Score (%)**.
 - **Key Discovery:** Our analysis shows that **Frequency (-2.62)** has a significantly higher impact on retention than **Monetary (-1.67)**. 
 - **Business Insight:** Building **shopping habits** is more valuable for long-term stability than isolated high-ticket sales.
 
-![Churn Prediction Model Performance](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/churn_prediction_model.png)
+![Churn Prediction Model Performance](reports/figures/churn_prediction_model.png)
 
 ### Time-Based Behavioral Insights
 Understanding when and how customers interact with the platform helps in timing our interventions.
 - **Recency Distribution:** Helps management define the "Defection Point" to trigger recovery campaigns.
 - **Seasonality:** Tracks monthly revenue trends to align marketing budgets with high-activity periods.
 
-![Recency Distribution](C:/Users/MASTER/OneDrive/Desktop/projects%20to%20find%20job/E-Commerce%20Customer%20Behavior%20Analysis/reports/figures/recency_distribution.png)
+![Recency Distribution](reports/figures/recency_distribution.png)
 
 ---
 
